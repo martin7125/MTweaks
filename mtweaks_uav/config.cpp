@@ -20,6 +20,7 @@ class CfgPatches
         {
             "MTweaks_UAVBattery"
         };
+        units[] = {};
     };
 };
 
@@ -54,7 +55,7 @@ class CfgWeapons
         displayName = "AR-2 Darter (Packed)";
         descriptionShort = "Packed AR-2 Darter UAV. Deploy and recover via ACE interaction.";
         picture = "\mtweaks_uav\ui\darter.paa";
-        model = "\A3\Drones_F\Air_F_Gamma\UAV_01\UAV_01_F.p3d";
+        model = "a3\props_f_enoch\military\equipment\batterypack_01_closed_f.p3d";
 
         class ItemInfo: CBA_MiscItem_ItemInfo
         {
@@ -62,21 +63,6 @@ class CfgWeapons
         };
     };
 };
-
-/*
-class CfgVehicles
-{
-    class B_UAV_01_F;
-
-    class MTweaks_AR2_Inventory: B_UAV_01_F
-    {
-        author = "MTweaks";
-        scope = 1;
-        scopeCurator = 0;
-        displayName = "AR-2 Darter (Inventory Item)";
-    };
-};
-*/
 
 /*
 class CfgFunctions
