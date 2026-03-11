@@ -53,7 +53,7 @@ class CfgWeapons
         scope = 2;
         scopeArsenal = 2;
         displayName = "AR-2 Darter (Packed)";
-        descriptionShort = "Packed AR-2 Darter UAV. Deploy and recover via ACE interaction.";
+        descriptionShort = "Deploy and recover via ACE interaction. UAV battery is needed for deployment.";
         picture = "\mtweaks_uav\ui\darter.paa";
         model = "a3\props_f_enoch\military\equipment\batterypack_01_closed_f.p3d";
 
@@ -64,20 +64,20 @@ class CfgWeapons
     };
 };
 
-/*
 class CfgFunctions
 {
     class MTweaks
     {
-        tag = "MT";
+        tag = "MTweaks";
 
-        class DarterItem
+        class Darter
         {
             file = "\mtweaks_uav\functions";
             class addInteractions
             {
                 postInit = 1;
             };
+            /*
             class canDeployDarter {};
             class deployDarter {};
             class canPickupDarter {};
@@ -85,7 +85,7 @@ class CfgFunctions
             class getUAVClassForSide {};
             class canSelectBattery {};
             class selectNextBattery {};
+            */
         };
     };
 };
-*/
