@@ -39,6 +39,7 @@ class CfgMagazines
         model = "\z\ace\addons\logistics_uavbattery\data\ace_battery.p3d";
         count = 1000;
         mass = 20;
+        ace_disableRepacking = 1;
     };
 };
 
@@ -77,6 +78,10 @@ class CfgFunctions
             {
                 postInit = 1;
             };
+            class pickupVerify {};
+            class canPickupDarter {};
+            class canDeployDarter {};
+            class deployDarterServer {};
             /*
             class canDeployDarter {};
             class deployDarter {};
