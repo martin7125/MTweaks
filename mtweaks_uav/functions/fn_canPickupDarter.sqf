@@ -1,3 +1,7 @@
+/*
+Checks if the player can pickup the UAV.
+*/
+
 params ["_target", "_player"];
 
 if (isNull _target) exitWith {false};

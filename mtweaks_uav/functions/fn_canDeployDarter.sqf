@@ -1,3 +1,7 @@
+/*
+Checks if the player can deploy the UAV.
+*/
+
 params ["_target", "_player"];
 
 vehicle _player == _player &&

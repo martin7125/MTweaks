@@ -1,3 +1,7 @@
+/*
+Server-side function to ensure only one player can pick up the UAV in order to prevent duplication.
+*/
+
 if (!isServer) exitWith {};
 
 params ["_target", "_player"];

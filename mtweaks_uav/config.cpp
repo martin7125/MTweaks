@@ -74,23 +74,12 @@ class CfgFunctions
         class Darter
         {
             file = "\mtweaks_uav\functions";
-            class addInteractions
-            {
-                postInit = 1;
-            };
+            class addInteractions { postInit = 1; };
+            class disableUAVCollision { postInit = 1; };
             class pickupVerify {};
             class canPickupDarter {};
             class canDeployDarter {};
-            class deployDarterServer {};
-            /*
-            class canDeployDarter {};
             class deployDarter {};
-            class canPickupDarter {};
-            class pickupDarter {};
-            class getUAVClassForSide {};
-            class canSelectBattery {};
-            class selectNextBattery {};
-            */
         };
     };
 };
