@@ -36,7 +36,7 @@ private _pickupAction =
   {
     params ["_target", "_player", "_params"];
 
-    [_target, _player] call MTweaks_fnc_canPickupDarter
+    [_target, _player] call MTweaks_fnc_canPickupDarter;
   }
 ] call ace_interact_menu_fnc_createAction;
 

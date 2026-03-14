@@ -1,3 +1,7 @@
+/*
+Disable player collisions with Darter UAVs to prevent them from being used as weapons.
+*/
+
 ["UAV_01_base_F", "init", {
   _this params ["_uav"];
 

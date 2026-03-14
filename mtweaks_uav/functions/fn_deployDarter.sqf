@@ -2,7 +2,7 @@
 Sets up the AR-2 Darter UAV for deployment. Exact placement is handled via ACE carry.
 */
 
-params ["_target", "_player"];
+params ["_player"];
 
 //Select which UAV to spawn depending on player side
 private _uavClass = switch (side _player) do {
@@ -11,6 +11,8 @@ private _uavClass = switch (side _player) do {
   case independent: {"I_UAV_01_F"};
   default {""};
 };
+
+private _spawnOffset = [0, 1.2, 0.5];
 
 //Sort UAV batteries by capacity
 private _batteries = magazinesAmmo _player select {(_x select 0) isEqualTo "MTweaks_UAVBattery"};
@@ -22,7 +24,7 @@ if (_batteries isEqualTo []) exitWith {};
 private _largestBattery = round ((_batteries select 0) select 1);
 private _fuel = _largestBattery / 1000;
 
-private _uav = createVehicle [_uavClass, getPosATL _player];
+private _uav = createVehicle [_uavClass, _player modelToWorld _spawnOffset];
 //_uav enableSimulationGlobal false; //Disable simulation or else UAV will make noise while carrying
 
 [_uav, _fuel] remoteExecCall ["setFuel", _uav];
@@ -39,7 +41,7 @@ _player removeMagazines "MTweaks_UAVBattery";
 } forEach _batteries;
 
 //Use ACE carry to place the UAV
-[_uav, true, [0, 1.2, 0.5], 0, true, false] call ace_dragging_fnc_setCarryable;
+[_uav, true, _spawnOffset, 0, true, false] call ace_dragging_fnc_setCarryable;
 [_player, _uav] call ace_dragging_fnc_startCarry;
 [_uav, false] remoteExecCall ["allowDamage", _uav];
 
