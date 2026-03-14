@@ -12,12 +12,12 @@ private _deployAction =
 {
   params ["_target", "_player", "_params"];
 
-  [_target, _player] call MTweaks_fnc_deployDarter;
+  [_player] call MTweaks_fnc_deployDarter;
 },
 {  
   params ["_target", "_player", "_params"];
 
-  [_target, _player] call MTweaks_fnc_canDeployDarter;
+  [_player] call MTweaks_fnc_canDeployDarter;
 }] call ace_interact_menu_fnc_createAction;
 
 ["CAManBase", 1, ["ACE_SelfActions"], _deployAction, true] call ace_interact_menu_fnc_addActionToClass;

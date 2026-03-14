@@ -13,4 +13,6 @@ _target setVariable ["MTweaks_uav_pickingUp", true];
 _player addItem "MTweaks_AR2_Item";
 _player addMagazine ["MTweaks_UAVBattery", round ((fuel _target) * 1000)];
 
+[_player, "amovpercmstpsraswpstdnon_ainvpercmstpsraswpstdnon_putdown"] remoteExec ["playMove", _player];
+
 deleteVehicle _target;

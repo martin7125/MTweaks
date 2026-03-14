@@ -12,6 +12,8 @@ private _uavClass = switch (side _player) do {
   default {""};
 };
 
+if count _uavClass == 0 exitWith {};
+
 private _spawnOffset = [0, 1.2, 0.5];
 
 //Sort UAV batteries by capacity
@@ -43,7 +45,6 @@ _player removeMagazines "MTweaks_UAVBattery";
 //Use ACE carry to place the UAV
 [_uav, true, _spawnOffset, 0, true, false] call ace_dragging_fnc_setCarryable;
 [_player, _uav] call ace_dragging_fnc_startCarry;
-[_uav, false] remoteExecCall ["allowDamage", _uav];
 
 //Re-enable UAV simulation and create crew once player is done carrying it
 [{
