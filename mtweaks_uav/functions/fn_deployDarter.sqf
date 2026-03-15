@@ -12,7 +12,7 @@ private _uavClass = switch (side _player) do {
   default {""};
 };
 
-if count _uavClass == 0 exitWith {};
+if (count _uavClass == 0) exitWith {};
 
 private _spawnOffset = [0, 1.2, 0.5];
 
@@ -50,12 +50,12 @@ _player removeMagazines "MTweaks_UAVBattery";
 [{
   _this params ["_player", "_uav"];
 
-  isNull (attachedTo _uav) || !(alive _player) || !(alive _uav)
+  (isNull (attachedTo _uav) || !(alive _player) || !(alive _uav)) && !(player getVariable ["ace_dragging_iscarrying", true]);
 },
 {
   _this params ["_player", "_uav"];
 
   //_uav enableSimulationGlobal true;
   [_uav, false] call ace_dragging_fnc_setCarryable;
-  createVehicleCrew _uav;
+  [_uav] remoteExecCall ["createVehicleCrew", _uav];
 }, [_player, _uav]] call CBA_fnc_waitUntilAndExecute;

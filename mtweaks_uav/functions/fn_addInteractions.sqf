@@ -20,7 +20,7 @@ private _deployAction =
   [_player] call MTweaks_fnc_canDeployDarter;
 }] call ace_interact_menu_fnc_createAction;
 
-["CAManBase", 1, ["ACE_SelfActions"], _deployAction, true] call ace_interact_menu_fnc_addActionToClass;
+["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _deployAction, true] call ace_interact_menu_fnc_addActionToClass;
 
 
 private _pickupAction = 

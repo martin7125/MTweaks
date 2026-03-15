@@ -38,7 +38,7 @@ class CfgMagazines
         picture = "\z\ace\addons\logistics_uavbattery\ui\UAV_battery_ca.paa";
         model = "\z\ace\addons\logistics_uavbattery\data\ace_battery.p3d";
         count = 1000;
-        mass = 20;
+        mass = 0;
         ace_disableRepacking = 1;
     };
 };
@@ -62,6 +62,30 @@ class CfgWeapons
         {
             mass = 80;
         };
+    };
+};
+
+class CfgVehicles
+{
+    //Disable gunner slot of UAVs
+    class UAV_01_base_F
+    {
+        class Turrets {};
+    };
+
+    class B_UAV_01_F: UAV_01_base_F
+    {
+        class Turrets {};
+    };
+
+    class O_UAV_01_F: UAV_01_base_F
+    {
+        class Turrets {};
+    };
+
+    class I_UAV_01_F: UAV_01_base_F
+    {
+        class Turrets {};
     };
 };
 
