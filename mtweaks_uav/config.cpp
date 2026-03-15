@@ -67,10 +67,19 @@ class CfgWeapons
 
 class CfgVehicles
 {
-    //Disable gunner slot of UAVs
-    class UAV_01_base_F
-    {
-        class Turrets {};
+    class Helicopter;
+    
+    class Helicopter_Base_F: Helicopter {
+      class Viewoptics;
+    };
+
+    class UAV_01_base_F: Helicopter_Base_F {
+      class Viewoptics: Viewoptics
+        {
+            minFov = 0.75;
+            maxFov = 0.75;
+            visionMode[] = {"Normal"};
+        };
     };
 
     class B_UAV_01_F: UAV_01_base_F
